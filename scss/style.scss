@@ -7,7 +7,12 @@
   padding: 0;
   text-decoration: none;
 }
+html {
+  width: 100vw;
+  margin: auto;
+}
 body {
+  max-width: 100vw;
   background: #f8f9fa;
   text-align: center;
   font-family: Lato;
@@ -230,30 +235,33 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     ul {
+      position: relative;
       display: flex;
       justify-content: space-between;
       width: 100%;
       color: #007bfebe;
       font-size: 0.8em;
       list-style: none;
+
+      p:after {
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        width: 1.5px;
+        height: 1.5px;
+        content: "";
+        background: black;
+      }
+      li:last-of-type p:after {
+        background: transparent;
+      }
     }
     li {
       position: relative;
       margin-right: 10px;
       margin-bottom: 5px;
     }
-    p:after {
-      position: absolute;
-      top: 50%;
-      right: -10px;
-      width: 1.5px;
-      height: 1.5px;
-      content: "";
-      background: black;
-    }
-    li:last-of-type p:after {
-      background: transparent;
-    }
+
     .text {
       margin-top: 6px;
       font-size: 0.6em;
